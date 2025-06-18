@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>لسما 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top, #ffe4e1, #fff0f5);
+      font-family: 'Cairo', sans-serif;
+      overflow-y: scroll;
+      text-align: center;
+      position: relative; /* عشان القلوب تظهر صح */
+    }
+
+    .message-box {
+      margin: 50px auto;
+      max-width: 700px;
+      color: #d63384;
+      font-size: 1.3em;
+      background: rgba(255,255,255,0.9);
+      padding: 20px 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #ffb6c1;
+      line-height: 1.7;
+      direction: rtl;
+      text-align: justify;
+    }
+
+    .sama {
+      font-size: 1.5em;
+      color: #ff1493;
+      font-weight: bold;
+    }
+
+    .start-btn, .love-btn {
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+
+    .love-btn {
+      display: none;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #ff69b4;
+      }
+      to {
+        box-shadow: 0 0 20px #ff1493;
+      }
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 2em;
+      animation: floatUp 5s linear infinite;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-100vh) rotate(360deg);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .message-box {
+        padding: 20px;
+        font-size: 1.1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="message-box">
+  <p><strong>....أول حاجة دوسي علي الزرار اللي تحت دا 🫣</strong></p>
+  <p>مكنش عندي أدنى فكرة هصالحك إزاي و فكرت كتير و قولت لازم أتعب في حاجة بقا عشان نمنا كدا، بس بجد مكنتش قادر خالص و حقك عليا يا <span class="sama">سما</span>...</p>
+  <p>أنا قولتلك كتير إن كل دا بيحصل عشان إحنا بعيد، و صدقيني صدقيني لما نتقابل كل دا هيتحل، أنا مش زعلان منك، أنا زعلان عشان بعيد عنك ❤️</p>
+  <p>وصلت لمرحلة إني مهما اتكلمت أو قولت، مفيش كلام قادر يوصف اللي جوايا، مفيش حاجة قادرة توريكي غلاوتك عندي غير عنيا بقا...</p>
+  <p>هي فترة صعبة عليا و عليكي، و هنعديها سوا، عشان إحنا وعدنا بعض بجد؟</p>
+  <p>أنا ببقى حابب إننا ديما نتكلم و تقوليلي على كل فِنتوفة جواكي، و أي حاجة مضايقاكي، عشان مش بعرف أشوف حبيبتي مضايقة من حاجة و أنا بعيد عنها و مش عارف أعمل حاجة.</p>
+  <p>نفسي بجد بجد أكون جنبك، بس صدقيني أنا جنبك حتى لو بعيد عن بعض ألف كيلو يا <span class="sama">سما</span>، إنتي في قلبي يا بتتتت 💘</p>
+  <p>وقفتك جنبي مفيش "شكراً" كفاية عليها، و نفسي أقدر أردلك دا... إنتي خلتيني قادر أكمل بجد يا <span class="sama">سما</span>، عشان كدا أنا عاوز ديما أقول: عشانك أنا قادر أكمل..❤️💫</p>
+  <p style="font-size: 1.6em; text-align: center;">BAHBK 💖</p>
+
+  <button class="start-btn" onclick="startLove()">بحبك 🫣</button>
+</div>
+
+<audio id="bg-music" src="https://files.catbox.moe/vz967e.mp3" loop></audio>
+
+<script>
+    function startLove() {
+      document.getElementById("bg-music").play();
+  
+      const emojis = ['💖', '🌸']; // 🆕 قلوب وزهور
+  
+      for (let i = 0; i < 40; i++) {
+        const emoji = document.createElement('div');
+        emoji.classList.add('heart');
+        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.left = Math.random() * 100 + 'vw';
+        emoji.style.top = '100vh';
+        emoji.style.fontSize = Math.random() * 20 + 25 + 'px';
+        emoji.style.animationDuration = (Math.random() * 6 + 7) + 's';
+        document.body.appendChild(emoji);
+        setTimeout(() => emoji.remove(), 40000);
+      }
+    }
+  </script>
+  
+
+</body>
+</html>
